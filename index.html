@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftFocus Pomodoro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+            },
+            colors: {
+              background: '#e0e5ec',
+              primary: '#ff6b6b',    // Coral Red (Work)
+              secondary: '#4ecdc4',  // Teal (Short Break)
+              tertiary: '#45b7d1',   // Blue (Long Break)
+              mustard: '#feca57',    // Mustard (Failed)
+              text: '#4a5568',
+            },
+            boxShadow: {
+              neumorph: '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+              'neumorph-inset': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+              'neumorph-sm': '5px 5px 10px rgb(163,177,198,0.6), -5px -5px 10px rgba(255,255,255, 0.5)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #e0e5ec;
+        color: #4a5568;
+      }
+      /* Smooth transitions for color changes */
+      .color-transition {
+        transition: color 0.5s ease, stroke 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+      }
+
+      /* 3D Clay Effect for Tomatoes */
+      .clay-sphere {
+        border-radius: 50%;
+        box-shadow: inset -4px -4px 8px rgba(0,0,0,0.2), 
+                    inset 4px 4px 8px rgba(255,255,255,0.4), 
+                    3px 3px 6px rgba(163,177,198,0.4);
+      }
+
+      /* Flat/Squashed effect for failed tomatoes */
+      .clay-flat {
+        border-radius: 40%;
+        transform: scaleY(0.7);
+        box-shadow: inset -2px -2px 5px rgba(0,0,0,0.1), 
+                    inset 2px 2px 5px rgba(255,255,255,0.3), 
+                    2px 2px 4px rgba(163,177,198,0.3);
+      }
+
+      /* Frosted Glass / Glassmorphism */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+      }
+      
+      /* Scrollbar hiding for cleaner look */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "uuid": "https://esm.sh/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
